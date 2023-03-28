@@ -6,8 +6,18 @@ secret_key = "oalyMLH0IYqmTWKmfAF+fxZkPhw6r/bh/1SofcHJ"
 
 resource "aws_eip" "lb" {
     vpc = true
+    tags = {
+     Name = "newbucket"
+     Environment = "Test"
+   }
 }
 
 resource "aws_s3_bucket" "uchebucket" {
-  bucket = "there-is-someone-learning-buckets"
+  bucket = "mybucket-${random_string.random_suffix.result}"
+}
+
+resource "random_string" "random_suffix" {
+  length  = 3
+  special = false
+  upper   = false
 }
