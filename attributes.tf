@@ -21,3 +21,8 @@ resource "random_string" "random_suffix" {
   special = false
   upper   = false
 }
+
+output "id" {
+  description = "Contains the EIP allocation ID"
+  value       = aws_eip.default.id
+}
