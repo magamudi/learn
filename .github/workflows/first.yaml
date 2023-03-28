@@ -34,4 +34,4 @@ jobs:
       - name: Terraform apply
         run: terraform apply -auto-approve
       - name: Terraform destroy
-        run: terraform destroy -target=output.aws_eip.lb.id --auto-approve
+        run: terraform destroy -target=output.id --auto-approve
